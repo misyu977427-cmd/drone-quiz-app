@@ -58,10 +58,9 @@ export default function DroneQuiz() {
           <div className="bg-slate-50 p-6 rounded-xl space-y-4 mb-8">
             <h2 className="font-bold text-slate-800 border-b border-slate-200 pb-2">【 学習の進め方・ルール 】</h2>
             <ul className="text-xs leading-relaxed text-slate-600 space-y-3">
-              <li><span className="font-bold text-slate-800">1. ランダム出題システム</span><br/>起動のたびに全25問の順番がシャッフルされます。本質的な知識の定着を助けます。</li>
-              <li><span className="font-bold text-slate-800">2. 根拠に基づいた即時解説</span><br/>回答後、すぐに解説を表示。すべての解説に教則の参照番号を付記しています。</li>
-              <li><span className="font-bold text-slate-800">3. 合格判定スコア</span><br/>本試験を想定し、{PASS_THRESHOLD}問以上(正解率80%以上)の正解で合格圏内と判定します。</li>
-              <li><span className="font-bold text-slate-800">4. 隙間時間の活用</span><br/>1周5分程度で完了します。通勤や休憩中の反復学習に最適です。</li>
+              <li><span className="font-bold text-slate-800">1. ランダム出題システム</span><br/>起動のたびに全25問の順番がシャッフルされます‼</li>
+              <li><span className="font-bold text-slate-800">2. 分かりやすい解説付き！</span><br/>回答後、すぐに解説を表示‼</li>
+              <li><span className="font-bold text-slate-800">3. 合格判定スコア</span><br/>本試験を想定し、{PASS_THRESHOLD}問以上(正解率80%以上)の正解で合格圏内です‼通勤や休憩中の反復学習に最適です</li>
             </ul>
           </div>
 
