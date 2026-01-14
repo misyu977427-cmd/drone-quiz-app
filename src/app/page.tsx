@@ -88,7 +88,7 @@ export default function DroneQuiz() {
           </div>
           
           <div className="py-6 border-t border-b border-gray-100 mb-8">
-            <p className="text-[10px] font-bold text-orange-500 mb-3 uppercase tracking-wider">実地試験の対策はこちら</p>
+            <p className="text-[10px] font-bold text-orange-500 mb-3 uppercase tracking-wider"></p>
             <a href={SUN_TV_URL} target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-blue-600 hover:underline leading-tight block">
               サンテレビドローンキャンプ 2025<br/><span className="text-sm">公式サイトをチェック</span>
             </a>
