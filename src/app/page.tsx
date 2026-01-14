@@ -1,8 +1,7 @@
-// src/app/page.tsx
 "use client";
 
 import { useState, useEffect } from "react";
-import { quizData as questions, type Question } from "./data";
+import { quizData as questions, type Question } from "./data"; 
 import { Trophy, CheckCircle, XCircle, RefreshCw } from "lucide-react";
 
 export default function Home() {
@@ -13,10 +12,7 @@ export default function Home() {
   const [selected, setSelected] = useState<number | null>(null);
 
   const startQuiz = () => {
-    // 50問のプールからランダムに25問を抽出してシャッフル
-    const shuffled = [...questions]
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 25);
+    const shuffled = [...questions].sort(() => Math.random() - 0.5).slice(0, 25);
     setQuizList(shuffled);
     setCurrentIdx(0);
     setScore(0);
@@ -40,12 +36,11 @@ export default function Home() {
 
   if (showResult) {
     return (
-      <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center p-6">
         <Trophy className="w-16 h-16 text-yellow-400 mb-4" />
-        <h2 className="text-3xl font-bold mb-2">{score >= 20 ? "合格！" : "不合格"}</h2>
-        <p className="text-xl mb-8">スコア: {score} / 25</p>
-        <button onClick={startQuiz} className="bg-blue-600 px-8 py-3 rounded-lg flex items-center gap-2 font-bold">
-          <RefreshCw /> もう一度挑戦する
+        <h2 className="text-3xl font-bold mb-8">スコア: {score} / 25</h2>
+        <button onClick={startQuiz} className="bg-blue-600 px-8 py-3 rounded-lg flex items-center gap-2">
+          <RefreshCw /> 再挑戦する
         </button>
       </div>
     );
@@ -54,13 +49,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-4">
       <div className="max-w-2xl mx-auto py-8">
-        <div className="flex justify-between text-slate-400 text-sm mb-4">
-          <span>教則第4版対応（ランダム25問）</span>
+        <div className="flex justify-between text-slate-400 mb-4">
+          <span>教則第4版対応（ランダム出題）</span>
           <span>{currentIdx + 1} / 25</span>
         </div>
-        <h2 className="text-xl font-bold mb-8 leading-relaxed">{currentQ.text}</h2>
+        <h2 className="text-xl font-bold mb-8">{currentQ.text}</h2>
         <div className="space-y-3">
-          {currentQ.options.map((opt: string, i: number) => (
+          {currentQ.options.map((opt, i) => (
             <button
               key={i}
               onClick={() => handleAnswer(i)}
@@ -76,13 +71,12 @@ export default function Home() {
         </div>
         {selected !== null && (
           <div className="mt-8 p-6 bg-slate-900 rounded-lg border border-blue-900/30">
-            <h4 className="text-blue-400 font-bold mb-2">解説</h4>
             <p className="text-sm text-slate-300 mb-6">{currentQ.explanation}</p>
             <button
-              onClick={() => currentIdx === 24 ? setShowResult(true) : (setCurrentIdx(currentIdx + 1), setSelected(null))}
+              onClick={() => currentIdx === quizList.length - 1 ? setShowResult(true) : (setCurrentIdx(currentIdx + 1), setSelected(null))}
               className="w-full bg-white text-slate-900 py-3 rounded-lg font-bold"
             >
-              {currentIdx === 24 ? "結果を見る" : "次へ進む"}
+              {currentIdx === quizList.length - 1 ? "結果を見る" : "次へ進む"}
             </button>
           </div>
         )}
