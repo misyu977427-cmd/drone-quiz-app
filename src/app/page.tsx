@@ -52,9 +52,9 @@ export default function Home() {
         <div className="max-w-md w-full bg-slate-900 border border-slate-800 p-8 rounded-3xl space-y-6 shadow-2xl">
           <div className="flex items-center gap-3 text-blue-400 mb-2 font-bold italic"><Info size={24} /> <h2 className="text-xl">EXAM RULES</h2></div>
           <ul className="space-y-4 text-sm text-slate-400 font-medium">
-            <li className="flex gap-3"><span className="text-blue-500 font-black">01</span> 教則第4版（令和7年2月施行）から出題されます。</li>
-            <li className="flex gap-3"><span className="text-blue-500 font-black">02</span> 全50問から、ランダムに25問を抽出します。</li>
-            <li className="flex gap-3"><span className="text-blue-500 font-black">03</span> 合格基準は 20 / 25 問（正解率80%）以上です。</li>
+            <li className="flex gap-3"><span className="text-blue-500 font-black">01</span> 🚁教則第4版（令和7年2月施行）から出題されます。🚁</li>
+            <li className="flex gap-3"><span className="text-blue-500 font-black">02</span> 🚁全50問から、ランダムに25問を抽出します。🚁</li>
+            <li className="flex gap-3"><span className="text-blue-500 font-black">03</span> 🚁合格基準は 20 / 25 問（正解率80%）以上です。🚁</li>
           </ul>
           <button onClick={startQuiz} className="w-full bg-blue-600 py-4 rounded-xl font-bold flex items-center justify-center gap-2 mt-8 active:scale-95 transition-all">試験を開始する</button>
         </div>
